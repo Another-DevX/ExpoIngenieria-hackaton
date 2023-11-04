@@ -33,37 +33,44 @@ function Page() {
       ...credentials,
     });
     if (result?.ok) {
-      replace('/')
+      replace('/');
     }
   };
 
   return (
-    <main className='h-screen'>
-      <UiImage
-        className='rounded-none'
-        shadow='lg'
-        src={BG.src}
-        alt='background'
-      />
-      <Card className=' z-10 justify-self-end h-fit absolute bottom-0 w-full rounded-b-none'>
-        <CardHeader>Iniciar sesión</CardHeader>
-        <CardBody>
-          <form onSubmit={handleOnLogin} className='flex gap-5 flex-col w-full'>
-            <Input
-              name='email'
-              type='email'
-              label='email'
-              placeholder='
+    <main className='h-screen  flex justify-center'>
+      <div className='max-w-lg relative h-full'>
+        <UiImage
+          className='rounded-none'
+          shadow='lg'
+          src={BG.src}
+          alt='background'
+        />
+        <Card className=' z-10 justify-self-end h-fit absolute bottom-0 w-full rounded-b-none'>
+          <CardHeader>Iniciar sesión</CardHeader>
+          <CardBody>
+            <form
+              onSubmit={handleOnLogin}
+              className='flex gap-5 flex-col w-full'
+            >
+              <Input
+                name='email'
+                type='email'
+                label='email'
+                placeholder='
             example.xyz@mail.com'
-            />
-            <Input name='password' type='password' label='password' />
-            <Input type='submit' value='Ingresar' />
-          </form>
-        </CardBody>
-        <CardFooter>
-          <Link href={'/auth/register'} >¿Aun no tienes cuenta? registrate</Link>
-        </CardFooter>
-      </Card>
+              />
+              <Input name='password' type='password' label='password' />
+              <Input type='submit' value='Ingresar' />
+            </form>
+          </CardBody>
+          <CardFooter>
+            <Link href={'/auth/register'}>
+              ¿Aun no tienes cuenta? registrate
+            </Link>
+          </CardFooter>
+        </Card>
+      </div>
     </main>
   );
 }

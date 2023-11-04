@@ -134,6 +134,7 @@ function Page({ params }: { params: { id: string } }) {
           alt='icon'
           height={64}
           width={64}
+          onClick={() => push('/')}
           className='absolute top-2 left-2'
         />
         <User
