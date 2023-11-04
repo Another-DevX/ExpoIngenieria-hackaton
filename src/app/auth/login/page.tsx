@@ -5,6 +5,8 @@ import {
   CardBody,
   Input,
   Image as UiImage,
+  CardFooter,
+  Link,
 } from '@nextui-org/react';
 import React, { useEffect } from 'react';
 import BG from '@/assets/loginMobile.jpg';
@@ -58,6 +60,9 @@ function Page() {
             <Input type='submit' value='Ingresar' />
           </form>
         </CardBody>
+        <CardFooter>
+          <Link href={'/auth/register'} >¿Aun no tienes cuenta? registrate</Link>
+        </CardFooter>
       </Card>
     </main>
   );

@@ -12,17 +12,36 @@ export const authOptions = {
       },
       async authorize (credentials, req) {
         console.log(credentials?.username)
-        await pb.collection('users').authWithPassword(credentials?.username as string, credentials?.password as string)
-        if(pb.authStore.isValid) {
-          const userData = await pb.collection('users').getOne(pb.authStore.model?.id)
-          const user = { id: pb.authStore.model?.id, name: userData.name, email: userData.email }
+        await pb
+          .collection('users')
+          .authWithPassword(
+            credentials?.username as string,
+            credentials?.password as string
+          )
+        if (pb.authStore.isValid) {
+          const userData = await pb
+            .collection('users')
+            .getOne(pb.authStore.model?.id)
+          const user = {
+            id: pb.authStore.model?.id,
+            name: userData.username,
+            email: userData.email,
+            currentID: userData.id
+          }
           return user
         } else {
           return null
         }
       }
     })
-  ]
+  ],
+  callbacks: {
+    async session ({ session }: any) {
+      // Send properties to the client, like an access_token from a provider.
+      session.accessToken = pb.authStore.model?.id
+      return session
+    }
+  }
 }
 
 export default NextAuth(authOptions)

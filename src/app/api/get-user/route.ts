@@ -5,6 +5,6 @@ import { headers } from 'next/headers'
 export async function GET (req: NextRequest, res: NextResponse) {
   const headersList = headers()
   const userId = headersList.get('userId')
-  const user = await pb.collection('users').getOne(userId as string)
+  const user = await pb.collection('users').getOne(userId as string, { requestKey: "user" })
   return NextResponse.json({ ...user })
 }

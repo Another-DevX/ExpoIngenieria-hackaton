@@ -5,6 +5,8 @@ import {
   CardBody,
   Input,
   Image as UiImage,
+  CardFooter,
+  Link,
 } from '@nextui-org/react';
 import React from 'react';
 import BG from '@/assets/loginMobile.jpg';
@@ -69,6 +71,9 @@ function Page() {
             <Input type='submit' value='Registrarse' />
           </form>
         </CardBody>
+        <CardFooter>
+          <Link href={'/auth/login'} >¿Ya tienes una cuenta? inicia sesión</Link>
+        </CardFooter>
       </Card>
     </main>
   );
