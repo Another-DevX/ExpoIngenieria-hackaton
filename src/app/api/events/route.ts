@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
   try {
     const eventData = await pb.collection("events").create(data);
     return NextResponse.json({ msg: "success" });
-  } catch (error) {
+  } catch (error) { 
     return NextResponse.json({ msg: error });
   }
 }
