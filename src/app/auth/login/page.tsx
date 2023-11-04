@@ -1,16 +1,19 @@
 'use client';
-import { CardHeader, Card, CardBody, Input } from '@nextui-org/react';
-import Image from 'next/image';
+import {
+  CardHeader,
+  Card,
+  CardBody,
+  Input,
+  Image as UiImage,
+} from '@nextui-org/react';
 import React from 'react';
+import BG from '@/assets/loginMobile.jpg';
 
 function Page() {
   return (
-    <main className='auth h-screen'>
-      <Image alt='background' />
-      <Card
-        isBlurred
-        className='justify-self-end h-fit absolute bottom-0 w-full rounded-b-none'
-      >
+    <main className='h-screen'>
+      <UiImage  className='rounded-none' shadow='lg' src={BG.src} alt='background' />
+      <Card className=' z-10 justify-self-end h-fit absolute bottom-0 w-full rounded-b-none'>
         <CardHeader>Sign In</CardHeader>
         <CardBody>
           <form className='flex gap-5 flex-col w-full'>
