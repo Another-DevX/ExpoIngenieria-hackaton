@@ -6,7 +6,7 @@ import {
   Input,
   Image as UiImage,
 } from '@nextui-org/react';
-import React, { useEffect } from 'react';
+import React from 'react';
 import BG from '@/assets/loginMobile.jpg';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
