@@ -1,2 +1,2 @@
 export * from './nextAuth'
-export * from './supabase'
+export { pb } from './pocketbase'
