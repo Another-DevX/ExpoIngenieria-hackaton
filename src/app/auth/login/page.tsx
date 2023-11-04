@@ -9,7 +9,7 @@ import {
 import React, { useEffect } from 'react';
 import BG from '@/assets/loginMobile.jpg';
 import { signIn, useSession } from 'next-auth/react';
-import { redirect, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 function Page() {
   const { data: session } = useSession();
