@@ -10,26 +10,6 @@ import React, { useEffect } from 'react';
 import BG from '@/assets/loginMobile.jpg';
 import { signIn, useSession } from 'next-auth/react';
 function Page() {
-  const { data: session } = useSession();
-
-  useEffect(() => {
-    console.debug(session);
-  }, [session]);
-  const handleOnRegister = async () => {
-    const credentials = {
-      email: 'some@gmail.com',
-      password: '122312',
-      // otros campos
-    };
-
-    // Llamada a la función signIn de next-auth
-    const result = await signIn('credentials', {
-      redirect: false,
-      ...credentials,
-    });
-    console.debug(result);
-  };
-
   return (
     <main className='h-screen'>
       <UiImage
